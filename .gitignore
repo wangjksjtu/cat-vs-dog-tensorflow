@@ -1,0 +1,5 @@
+*.pyc
+data/quality*
+data/train
+tmp/
+logs/*
