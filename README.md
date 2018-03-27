@@ -20,8 +20,8 @@ Then the images of different qualities and correspondingly prepared h5 files (e.
 
 __Note__: For this dataset, h5 file is not a very good choice because generated `data.h5` is too large (`25GB`) and it also takes a lot of time to read the data into the memory (`> 4GB`). I will search for more efficient ways of utilizing data.
 
-## Model
-From this time, the model is a simple multi-layer CNNs in order to shrink the parameters easily. The architecure of model is given in `model.py`.
+## Original Model
+From this time, the model is a simple multi-layer CNNs in order to shrink the parameters easily. The architecure of model is given in `model.py`. Or you can obatin the [architecure](https://github.com/wangjksjtu/cat-vs-dog-tensorflow/blob/master/parameters/models/model_22170834_original.pdf) and [parameters](https://github.com/wangjksjtu/cat-vs-dog-tensorflow/blob/master/parameters/models/model_22170834_original.txt) in `parameters/models/`.
 
 ## Train
 To train the model on images with quality scale of 5, just type the following command in your bash.
