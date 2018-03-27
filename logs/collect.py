@@ -2,12 +2,33 @@ import os
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--quality', type=int, default=0, help='Image quality [default: 0]')
+parser.add_argument('--quality', type=int, default=15, help='Image quality [default: 0]')
+parser.add_argument('--setting', type=int, default=8, help='Model architecture (0-8) [default: 8]')
+parser.add_argument('--model', type=str, default="", help='Model architecture description (0-8) [default: ""]')
 FLAGS = parser.parse_args()
 
+SETTING = FLAGS.setting
+MODEL = FLAGS.model
 QUALITY = FLAGS.quality
 
-log_path = "quality_" + str(QUALITY) + "/train/log_train.txt"
+model_list = ["io-units_x1+cnn_pooling2",
+              "io-units_x1+cnn_pooling",
+              "io-units_x2",
+              "io-layer",
+              "io-units_x1",
+              "io-units_x1+layer",
+              "io-units_x1+units_x1",
+              "io-units_x1+units_x2",
+              "baseline",
+              "original",
+             ]
+
+if MODEL == "":
+    SETTING = model_list[SETTING]
+else:
+    SETTING = MODEL
+
+log_path = SETTING + "/quality_" + str(QUALITY) + "/train/log_train.txt"
 k = 10
 
 def max_acc(log_path):
