@@ -14,7 +14,7 @@ parser.add_argument('--save_dir', type=str, default="models", help="The output d
 FLAGS = parser.parse_args()
 
 nb_classes = 2
-img_rows, img_cols = 208, 208
+img_rows, img_cols = 64, 64
 
 SETTING = FLAGS.setting
 MODEL = FLAGS.model
@@ -48,7 +48,7 @@ def build_model(setting):
 
     model = Sequential()
     model.add(Conv2D(16, (3, 3), strides=(1, 1), padding='same',
-                     activation='relu', input_shape=(208,208,3)))
+                     activation='relu', input_shape=(img_rows,img_cols,3)))
     model.add(MaxPooling2D((3,3), (2, 2), padding='same'))
     # model.add(BatchNormalization())
     model.add(LRN2D())

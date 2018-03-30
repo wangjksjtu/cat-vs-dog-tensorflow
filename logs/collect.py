@@ -2,9 +2,9 @@ import os
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--quality', type=int, default=15, help='Image quality [default: 0]')
-parser.add_argument('--setting', type=int, default=8, help='Model architecture (0-8) [default: 8]')
-parser.add_argument('--model', type=str, default="", help='Model architecture description (0-8) [default: ""]')
+parser.add_argument('--quality', type=int, default=15, help='Image quality [default: 15]')
+parser.add_argument('--setting', type=int, default=9, help='Model architecture (0-9) [default: 9]')
+parser.add_argument('--model', type=str, default="", help='Model architecture description (0-9) [default: ""]')
 FLAGS = parser.parse_args()
 
 SETTING = FLAGS.setting
