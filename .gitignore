@@ -1,5 +1,7 @@
 *.pyc
 data/quality*
+data/tiny-imagenet-200
+data/mini_imagenet
 data/train
 tmp/
 logs/*
